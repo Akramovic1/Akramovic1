@@ -1,10 +1,10 @@
 ### Hi there 👋
 
-![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=pb10005)
-![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=pb10005)
+![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=Akramovic1)
+![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1)
 
 <!--
-**pb10005/pb10005** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Akramovic1/Akramovic1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
