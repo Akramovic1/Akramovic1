@@ -5,7 +5,7 @@
 - 🔭 I’m currently working on Vue.js projects
 - 🌱 I’m currently learning javaScript & vue
 - 📫 How to reach me: eng.akramovic@gmail.com
-
+- JAVA ♥ JavaScript ♥ C ♥ 
 
 <!--
 **Akramovic1/Akramovic1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
