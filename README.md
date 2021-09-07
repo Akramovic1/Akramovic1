@@ -1,7 +1,8 @@
 ### Hi there 👋
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=Akramovic1)
-![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1)](https://github.com/anuraghazra/github-readme-stats)
+
 - 🔭 I’m currently working on Vue.js projects
 - 🌱 I’m currently learning javaScript & vue
 - 📫 How to reach me: eng.akramovic@gmail.com
