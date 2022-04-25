@@ -7,7 +7,7 @@
 
 - 🔭 I’m currently working on Vue.js projects
 - 🌱 I’m currently learning javaScript & vue
-- 📫 How to reach me: eng.akramovic@gmail.com
+- 📫 How to reach me: ahmedakramshawky@gmail.com
 - JAVA ♥ JavaScript ♥ C ♥ 
 
 <!--
