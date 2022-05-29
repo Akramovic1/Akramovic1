@@ -1,5 +1,4 @@
 ### Hi there 👋
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=Akramovic1&label=Profile%20views&color=1915f9&style=plastic" alt="Akramovic" /> </p>
 
 [![Ahmed Akram's GitHub stats](https://github-readme-stats.vercel.app/api?username=Akramovic1&hide=stars,issues)](https://github.com/Akramovic1/github-readme-stats)
 
@@ -10,6 +9,9 @@
 - 🌱 I’m currently learning javaScript & vue
 - 📫 How to reach me: ahmedakramshawky@gmail.com
 - JAVA Coder
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=Akramovic1&label=Profile%20views&color=1915f9&style=plastic" alt="Akramovic" /> </p>
+
 
 <!--
 **Akramovic1/Akramovic1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
