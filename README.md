@@ -1,5 +1,6 @@
 ### Hi there 👋
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=Akramovic1&label=Profile%20views&color=1915f9&style=plastic" alt="Akramovic" /> </p>
+
 [![Ahmed Akram's GitHub stats](https://github-readme-stats.vercel.app/api?username=Akramovic1&hide=stars,issues)](https://github.com/Akramovic1/github-readme-stats)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1&layout=compact)](https://github.com/Akramovic1/github-readme-stats)
