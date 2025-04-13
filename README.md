@@ -3,8 +3,6 @@
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1&layout=compact)](https://github.com/Akramovic1/github-readme-stats)
 
 
-- 📫 How to reach me: ahmedakramshawky@gmail.com
-
  
 <!--
 **Akramovic1/Akramovic1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
