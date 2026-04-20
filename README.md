@@ -81,8 +81,8 @@ Most of my work lives in private repos. → **[ahmedakram.dev](https://ahmedakra
   <img src="https://img.shields.io/badge/Portfolio-ahmedakram.dev-70a5fd?style=for-the-badge&logo=google-chrome&logoColor=white" />
 </a>
 &nbsp;
-<a href="https://linkedin.com/in/akramovic">
-  <img src="https://img.shields.io/badge/LinkedIn-akramovic-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+<a href="https://linkedin.com/in/ahmedakram1">
+  <img src="https://img.shields.io/badge/ahmedakram1?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 
 </div>
