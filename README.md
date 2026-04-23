@@ -20,7 +20,6 @@
   <kbd>AI / ML</kbd>
   <kbd>DeFi</kbd>
 </div>
----
  
 ## 👋 About
  
@@ -29,7 +28,6 @@ Currently shipping multiple products in stealth across **DeFi**, **AI**, and **d
  
 > Most of my work lives in private repos → visit **[ahmedakram.dev](https://ahmedakram.dev)** for the full picture.
  
----
  
 ## ⚡ Tech Stack
  
@@ -86,16 +84,10 @@ Currently shipping multiple products in stealth across **DeFi**, **AI**, and **d
     </td>
   </tr>
 </table>
----
  
 ## 📊 GitHub Stats
  
 <div align="center">
-  <img
-    height="180"
-    src="https://github-readme-stats.vercel.app/api?username=Akramovic1&show_icons=true&include_all_commits=true&count_private=true&hide=contribs&show=reviews,prs_merged&bg_color=00000000&hide_border=false&border_color=A78BFA&title_color=6D28D9&icon_color=7C3AED&text_color=7C3AED&ring_color=8B5CF6&cache_seconds=1800"
-    alt="GitHub Stats"
-  />
   <img
     height="180"
     src="https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1&layout=compact&langs_count=8&hide=jupyter%20notebook&bg_color=00000000&hide_border=false&border_color=A78BFA&title_color=6D28D9&text_color=7C3AED&cache_seconds=1800"
@@ -118,7 +110,6 @@ Currently shipping multiple products in stealth across **DeFi**, **AI**, and **d
   />
  
 </div>
----
  
 ## 📫 Let's Connect
  
