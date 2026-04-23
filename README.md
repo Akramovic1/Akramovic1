@@ -81,30 +81,6 @@ Building products across the full stack — from smart contracts and ML pipeline
  
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Akramovic1&theme=react-dark&hide_border=true&bg_color=0D1117&color=a78bfa&line=8b5cf6&point=f5f3ff&area=true&area_color=4c1d95" width="97%" alt="Activity Graph" />
 </div>
-## 🚀 Currently Building
- 
-<table>
-  <tr>
-    <td valign="top" width="50%">
-      <h4>🛰️ Infrastructure</h4>
-      <p>Embedded wallet platform, gasless transactions (ERC-4337 / EIP-7702), and shared auth for a portfolio of consumer products.</p>
-    </td>
-    <td valign="top" width="50%">
-      <h4>🤖 AI Agents</h4>
-      <p>Investment intelligence agents, AI messaging twins, and learning platforms powered by memory-palace and spaced-repetition techniques.</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top" width="50%">
-      <h4>💸 DeFi &amp; Neobank</h4>
-      <p>Crypto neobank on Base L2 with halal leverage trading, AI oracle swap routing, and a six-agent decision swarm.</p>
-    </td>
-    <td valign="top" width="50%">
-      <h4>🔬 Research</h4>
-      <p>ZK-SNARK (Groth16 + Circom) defense framework for prepaid utility meters — under review at IEEE ICBC / Blockchain 2026.</p>
-    </td>
-  </tr>
-</table>
 <h2 align="center">📫 Let's Connect</h2>
  
 <div align="center">
