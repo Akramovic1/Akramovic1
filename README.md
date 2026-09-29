@@ -24,10 +24,7 @@
 ## 👋 About
  
 Building products across the full stack — from smart contracts and ML pipelines to mobile apps and distributed systems.  
-Currently shipping multiple products in stealth across **DeFi**, **AI**, and **developer tooling**.
- 
-> Most of my work lives in private repos → visit **[ahmedakram.dev](https://ahmedakram.dev)** for the full picture.
- 
+Currently shipping multiple products in stealth across **DeFi**, **AI**, and **developer tooling**. 
  
 ## ⚡ Tech Stack
  
