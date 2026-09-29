@@ -85,11 +85,11 @@ Currently shipping multiple products in stealth across **DeFi**, **AI**, and **d
 ## 📊 GitHub Stats
  
 <div align="center">
-  <img
+  <!-- <img
     height="180"
     src="https://github-readme-stats.vercel.app/api/top-langs/?username=Akramovic1&layout=compact&langs_count=8&hide=jupyter%20notebook&bg_color=00000000&hide_border=false&border_color=A78BFA&title_color=6D28D9&text_color=7C3AED&cache_seconds=1800"
     alt="Top Languages"
-  />
+  /> -->
  
   <br/>
   <br/>
@@ -100,11 +100,11 @@ Currently shipping multiple products in stealth across **DeFi**, **AI**, and **d
  
   <br/>
   <br/>
-  <img
+  <!-- <img
     width="97%"
     src="https://github-readme-activity-graph.vercel.app/graph?username=Akramovic1&bg_color=00000000&hide_border=false&border_color=A78BFA&color=6D28D9&line=7C3AED&point=6D28D9&area=true&area_color=C4B5FD&title_color=6D28D9"
     alt="Activity Graph"
-  />
+  /> -->
  
 </div>
  
