@@ -26,14 +26,15 @@ async function gh(path, init = {}) {
     ...init,
     headers: { authorization: `bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'profile-stats', ...init.headers },
   });
-  if (!res.ok && res.status !== 202 && res.status !== 204) throw new Error(`${res.status} ${path}: ${await res.text()}`);
+  // Actions logs on a public repo are public: never print private repo paths or response bodies.
+  if (!res.ok && res.status !== 202 && res.status !== 204) throw new Error(`GitHub API ${res.status} on ${path.replace(/\/repos\/[^/]+\/[^/]+/, '/repos/<redacted>')}`);
   return res;
 }
 
 async function gql(query, variables = {}) {
   const res = await gh('/graphql', { method: 'POST', body: JSON.stringify({ query, variables }) });
   const body = await res.json();
-  if (body.errors) throw new Error(JSON.stringify(body.errors));
+  if (body.errors) throw new Error(`GraphQL error: ${body.errors.map((e) => e.type || 'UNKNOWN').join(', ')}`);
   return body.data;
 }
 
@@ -95,7 +96,7 @@ async function collect() {
   }
 
   // Lines added / removed by you, from each repo's contributor statistics.
-  let additions = 0, deletions = 0;
+  let additions = 0, deletions = 0, skipped = 0;
   await pool(repos.filter((r) => !r.isFork), 4, async (r) => {
     for (let attempt = 0; attempt < 8; attempt++) {
       const res = await gh(`/repos/${r.nameWithOwner}/stats/contributors`);
@@ -105,8 +106,9 @@ async function collect() {
       if (me) for (const w of me.weeks) { additions += w.a; deletions += w.d; }
       return;
     }
-    console.warn(`stats not ready for ${r.nameWithOwner}, skipped`);
+    skipped++;
   });
+  if (skipped) console.warn(`line stats not ready for ${skipped} repositories, skipped`);
 
   return {
     login, since: new Date(viewer.createdAt).getUTCFullYear(), updated: now.toISOString().slice(0, 10),
