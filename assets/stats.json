@@ -2,12 +2,13 @@
   "login": "Akramovic1",
   "since": 2019,
   "updated": "2026-10-19",
-  "contributions": 8611,
-  "commits": 700,
+  "contributions": 16429,
+  "commits": 7495,
+  "activeRepos": 131,
   "pullRequests": 4,
-  "additions": 7071025,
-  "deletions": 582102,
-  "lastYear": 4903,
+  "additions": 7069697,
+  "deletions": 581295,
+  "lastYear": 9674,
   "activeDays": 279,
   "weeks": [
     2,
@@ -72,10 +73,6 @@
       47727036
     ],
     [
-      "Jupyter Notebook",
-      10897035
-    ],
-    [
       "Python",
       9044271
     ],
@@ -85,7 +82,7 @@
     ],
     [
       "JavaScript",
-      5243992
+      5244486
     ],
     [
       "C",
