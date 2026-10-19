@@ -3,10 +3,10 @@
   "since": 2019,
   "updated": "2026-10-19",
   "contributions": 10202,
-  "commits": 7495,
-  "activeRepos": 131,
-  "additions": 7069697,
-  "deletions": 581295,
+  "commits": 7608,
+  "activeRepos": 134,
+  "additions": 7156386,
+  "deletions": 589247,
   "lastYear": 6494,
   "activeDays": 311,
   "weeks": [
@@ -81,7 +81,7 @@
     ],
     [
       "JavaScript",
-      5246508
+      5246862
     ],
     [
       "C",
