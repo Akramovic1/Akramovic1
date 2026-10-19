@@ -1,0 +1,35 @@
+name: stats
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: node scripts/stats.mjs
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+      - name: Show the stats card in the README
+        run: sed -i -e 's/^<!-- stats:start$/<!-- stats:start -->/' -e 's/^stats:end -->$/<!-- stats:end -->/' README.md
+      - name: Commit if changed
+        run: |
+          git add README.md assets/stats-light.svg assets/stats-dark.svg assets/stats.json
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update activity stats"
+          git push

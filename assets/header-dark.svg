@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="t d">
+<title id="t">Ahmed Akram</title>
+<desc id="d">Software engineer. Smart contracts, applied AI and developer tooling.</desc>
+<style>
+.name{font:650 76px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-2.6px;fill:#f0f6fc}
+.sub{font:400 23px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.2px;fill:#8b949e}
+.meta{font:500 13px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;letter-spacing:2px;fill:#8b949e}
+.stack{font:500 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#8b949e}
+.edge{stroke:#30363d;stroke-width:1;fill:none}
+.chain{stroke:#8b949e;stroke-width:1.5}
+.blk{fill:#0d1117;stroke:#f0f6fc;stroke-width:1.5}
+.neu{fill:#0d1117;stroke:#f0f6fc;stroke-width:1.5}
+.term{fill:#0d1117;stroke:#f0f6fc;stroke-width:1.5}
+.prompt{font:600 18px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#f0f6fc}
+.pulse{stroke:#a78bfa;stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:14 400;stroke-dashoffset:14;animation:run 5.6s linear infinite}
+.cursor{fill:#a78bfa;animation:blink 1.1s steps(1) infinite}
+.lit{fill:#a78bfa;opacity:0;animation:lit 5.6s linear infinite}
+@keyframes run{0%{stroke-dashoffset:14}35%{stroke-dashoffset:-400}100%{stroke-dashoffset:-400}}
+@keyframes blink{0%{opacity:1}50%{opacity:0}}
+@keyframes lit{0%,12%{opacity:0}16%{opacity:1}30%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.pulse,.lit{animation:none;opacity:0}.cursor{animation:none}}
+</style>
+<rect x="0" y="30" width="10" height="10" fill="#a78bfa"/>
+<text class="meta" x="22" y="40">SOFTWARE ENGINEER</text>
+<text class="meta" x="960" y="40" text-anchor="end">ALEXANDRIA · 31.20°N 29.92°E</text>
+<text class="name" x="-4" y="146">Ahmed Akram</text>
+<text class="sub" x="0" y="192">Smart contracts, applied AI</text>
+<text class="sub" x="0" y="224">and developer tooling, end to end.</text>
+<path class="edge" d="M649,84 L781,64"/>
+<path class="edge" d="M649,84 L781,104"/>
+<path class="edge" d="M649,84 L781,144"/>
+<path class="edge" d="M649,84 L781,184"/>
+<path class="edge" d="M649,84 L781,224"/>
+<path class="edge" d="M649,124 L781,64"/>
+<path class="edge" d="M649,124 L781,104"/>
+<path class="edge" d="M649,124 L781,144"/>
+<path class="edge" d="M649,124 L781,184"/>
+<path class="edge" d="M649,124 L781,224"/>
+<path class="edge" d="M649,164 L781,64"/>
+<path class="edge" d="M649,164 L781,104"/>
+<path class="edge" d="M649,164 L781,144"/>
+<path class="edge" d="M649,164 L781,184"/>
+<path class="edge" d="M649,164 L781,224"/>
+<path class="edge" d="M649,204 L781,64"/>
+<path class="edge" d="M649,204 L781,104"/>
+<path class="edge" d="M649,204 L781,144"/>
+<path class="edge" d="M649,204 L781,184"/>
+<path class="edge" d="M649,204 L781,224"/>
+<path class="edge" d="M799,64 L884,144.0"/>
+<path class="edge" d="M799,104 L884,144.0"/>
+<path class="edge" d="M799,144 L884,144.0"/>
+<path class="edge" d="M799,184 L884,144.0"/>
+<path class="edge" d="M799,224 L884,144.0"/>
+<path class="chain" d="M640,93 L640,115"/>
+<path class="chain" d="M640,133 L640,155"/>
+<path class="chain" d="M640,173 L640,195"/>
+<path class="pulse" d="M649,84 L781,104 L799,104 L884,144.0" style="animation-delay:0.0s"/>
+<path class="pulse" d="M649,164 L781,184 L799,184 L884,144.0" style="animation-delay:1.4s"/>
+<path class="pulse" d="M649,204 L781,64 L799,64 L884,144.0" style="animation-delay:2.8s"/>
+<path class="pulse" d="M649,124 L781,224 L799,224 L884,144.0" style="animation-delay:4.2s"/>
+<rect class="blk" x="631" y="75" width="18" height="18" rx="2"/>
+<rect class="blk" x="631" y="115" width="18" height="18" rx="2"/>
+<rect class="blk" x="631" y="155" width="18" height="18" rx="2"/>
+<rect class="blk" x="631" y="195" width="18" height="18" rx="2"/>
+<circle class="neu" cx="790" cy="64" r="9"/>
+<circle class="lit" cx="790" cy="64" r="4.5" style="animation-delay:2.8s"/>
+<circle class="neu" cx="790" cy="104" r="9"/>
+<circle class="lit" cx="790" cy="104" r="4.5" style="animation-delay:0.0s"/>
+<circle class="neu" cx="790" cy="144" r="9"/>
+<circle class="neu" cx="790" cy="184" r="9"/>
+<circle class="lit" cx="790" cy="184" r="4.5" style="animation-delay:1.4s"/>
+<circle class="neu" cx="790" cy="224" r="9"/>
+<circle class="lit" cx="790" cy="224" r="4.5" style="animation-delay:4.2s"/>
+<rect class="term" x="884" y="120" width="64" height="48" rx="6"/>
+<text class="prompt" x="896" y="150">&gt;</text>
+<rect class="cursor" x="914" y="135" width="10" height="18"/>
+<rect x="0" y="268" width="960" height="1" fill="#30363d"/>
+<rect x="0" y="267" width="96" height="3" fill="#a78bfa"/>
+<text class="stack" x="0" y="302" textLength="960" lengthAdjust="spacing">TYPESCRIPT · PYTHON · SOLIDITY · GO · DART  /  NEXT.JS · FLUTTER · NODE · POSTGRES · AWS  /  EVM · SOLANA · ERC-4337  /  PYTORCH · OPENCV</text>
+</svg>
