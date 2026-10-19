@@ -50,7 +50,7 @@ async function pool(items, size, fn) {
 }
 
 const YEAR_Q = `query($from:DateTime!,$to:DateTime!){viewer{contributionsCollection(from:$from,to:$to){
-  totalCommitContributions totalPullRequestContributions
+  totalCommitContributions totalPullRequestContributions restrictedContributionsCount
   contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}`;
 
 const REPOS_Q = `query($after:String){viewer{repositories(first:100,after:$after,ownerAffiliations:[OWNER,ORGANIZATION_MEMBER,COLLABORATOR]){
@@ -65,13 +65,14 @@ async function collect() {
   const now = new Date();
 
   // Contributions per calendar year since the account was created (API caps a window at one year).
-  let contributions = 0, commits = 0, pullRequests = 0;
+  // Private contributions the token cannot itemise come back as restrictedContributionsCount;
+  // the profile calendar counts them, so we do too.
+  let contributions = 0, pullRequests = 0;
   for (let y = new Date(viewer.createdAt).getUTCFullYear(); y <= now.getUTCFullYear(); y++) {
     const from = new Date(Date.UTC(y, 0, 1)).toISOString();
     const to = y === now.getUTCFullYear() ? now.toISOString() : new Date(Date.UTC(y, 11, 31, 23, 59, 59)).toISOString();
     const c = (await gql(YEAR_Q, { from, to })).viewer.contributionsCollection;
-    contributions += c.contributionCalendar.totalContributions;
-    commits += c.totalCommitContributions;
+    contributions += c.contributionCalendar.totalContributions + c.restrictedContributionsCount;
     pullRequests += c.totalPullRequestContributions;
   }
 
@@ -92,18 +93,24 @@ async function collect() {
   const owned = repos.filter((r) => r.owner.login === login);
   const langs = {};
   for (const r of owned.filter((r) => !r.isFork)) {
-    for (const e of r.languages.edges) langs[e.node.name] = (langs[e.node.name] || 0) + e.size;
+    // Notebooks are mostly stored cell output, not code.
+    for (const e of r.languages.edges) if (e.node.name !== 'Jupyter Notebook') langs[e.node.name] = (langs[e.node.name] || 0) + e.size;
   }
 
-  // Lines added / removed by you, from each repo's contributor statistics.
-  let additions = 0, deletions = 0, skipped = 0;
+  // Commits and lines added / removed by you, from each repo's contributor statistics
+  // (these see private repos the token can read, unlike contributionsCollection).
+  let additions = 0, deletions = 0, commits = 0, activeRepos = 0, skipped = 0;
   await pool(repos.filter((r) => !r.isFork), 4, async (r) => {
     for (let attempt = 0; attempt < 8; attempt++) {
       const res = await gh(`/repos/${r.nameWithOwner}/stats/contributors`);
       if (res.status === 204) return;
       if (res.status === 202) { await sleep(3000 + attempt * 2000); continue; } // GitHub is computing the stats
       const me = (await res.json()).find((c) => c.author?.login === login);
-      if (me) for (const w of me.weeks) { additions += w.a; deletions += w.d; }
+      if (me) {
+        commits += me.total;
+        activeRepos++;
+        for (const w of me.weeks) { additions += w.a; deletions += w.d; }
+      }
       return;
     }
     skipped++;
@@ -112,8 +119,8 @@ async function collect() {
 
   return {
     login, since: new Date(viewer.createdAt).getUTCFullYear(), updated: now.toISOString().slice(0, 10),
-    contributions, commits, pullRequests, additions, deletions,
-    lastYear: last.contributionCalendar.totalContributions, activeDays, weeks,
+    contributions, commits, activeRepos, pullRequests, additions, deletions,
+    lastYear: last.contributionCalendar.totalContributions + last.restrictedContributionsCount, activeDays, weeks,
     repositories: owned.length, privateRepositories: owned.filter((r) => r.isPrivate).length,
     languages: Object.entries(langs).sort((a, b) => b[1] - a[1]),
   };
@@ -146,7 +153,7 @@ function render(s, t) {
   const cols = [
     ['CONTRIBUTIONS', compact(s.contributions), `since ${s.since}`],
     ['LINES ADDED', compact(s.additions), `${compact(s.deletions)} removed`],
-    ['COMMITS', compact(s.commits), `${full(s.pullRequests)} pull requests`],
+    ['COMMITS', compact(s.commits), `across ${s.activeRepos} repositories`],
     ['REPOSITORIES', String(s.repositories), `${s.privateRepositories} private`],
   ];
   cols.forEach(([label, value, sub], i) => {
