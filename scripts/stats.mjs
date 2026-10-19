@@ -155,7 +155,7 @@ async function collect() {
 // ---------- render ----------
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const compact = (n) => n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e4 ? `${Math.round(n / 1e3)}k` : n.toLocaleString('en-US');
+const compact = (n) => n >= 1e6 ? `${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e5 ? `${Math.round(n / 1e3)}k` : n.toLocaleString('en-US');
 const full = (n) => n.toLocaleString('en-US');
 
 function render(s, t) {
@@ -199,7 +199,8 @@ function render(s, t) {
   const max = Math.max(1, ...s.weeks), gap = 4, bw = (W - gap * (s.weeks.length - 1)) / s.weeks.length;
   const top = [...s.weeks].sort((a, b) => b - a)[Math.min(4, s.weeks.length - 1)];
   s.weeks.forEach((v, i) => {
-    const h = Math.max(2, (v / max) * 76);
+    // Log scale: a few huge weeks must not flatten every ordinary week to nothing.
+    const h = v ? 6 + (Math.log1p(v) / Math.log1p(max)) * 70 : 2;
     o.push(`<rect class="bar${v >= top && v > 0 ? ' top' : ''}" x="${(i * (bw + gap)).toFixed(1)}" y="${(240 - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" style="animation-delay:${(i * 12)}ms"/>`);
   });
 
