@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="t d">
 <title id="t">GitHub activity</title>
-<desc id="d">16,429 contributions since 2019, 7,069,697 lines added, 7,495 commits, 146 repositories including 59 private.</desc>
+<desc id="d">10,202 contributions since 2019, 7,069,697 lines added, 7,495 commits, 146 repositories including 59 private.</desc>
 <style>
 .n{font:650 46px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-1.6px;fill:#f0f6fc}
 .l{font:500 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;letter-spacing:1.8px;fill:#8b949e}
@@ -12,7 +12,7 @@
 @media (prefers-reduced-motion:reduce){.bar{animation:none}}
 </style>
 <text class="l" x="0" y="12">CONTRIBUTIONS</text>
-<text class="n" x="-2" y="66">16k</text>
+<text class="n" x="-2" y="66">10k</text>
 <text class="s" x="0" y="94">since 2019</text>
 <rect x="220" y="0" width="1" height="96" fill="#30363d"/>
 <text class="l" x="240" y="12">LINES ADDED</text>
@@ -27,7 +27,7 @@
 <text class="n" x="718" y="66">146</text>
 <text class="s" x="720" y="94">59 private</text>
 <text class="l" x="0" y="146">LAST 12 MONTHS</text>
-<text class="l" x="960" y="146" text-anchor="end">9,674 CONTRIBUTIONS · 279 ACTIVE DAYS</text>
+<text class="l" x="960" y="146" text-anchor="end">6,494 CONTRIBUTIONS · 311 ACTIVE DAYS</text>
 <rect class="bar" x="0.0" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:0ms"/>
 <rect class="bar" x="18.2" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:12ms"/>
 <rect class="bar" x="36.4" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:24ms"/>
@@ -53,29 +53,29 @@
 <rect class="bar" x="400.2" y="237.2" width="14.2" height="2.8" rx="1.5" style="animation-delay:264ms"/>
 <rect class="bar" x="418.3" y="237.5" width="14.2" height="2.5" rx="1.5" style="animation-delay:276ms"/>
 <rect class="bar" x="436.5" y="233.8" width="14.2" height="6.2" rx="1.5" style="animation-delay:288ms"/>
-<rect class="bar" x="454.7" y="234.8" width="14.2" height="5.2" rx="1.5" style="animation-delay:300ms"/>
-<rect class="bar top" x="472.9" y="205.7" width="14.2" height="34.3" rx="1.5" style="animation-delay:312ms"/>
-<rect class="bar" x="491.1" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:324ms"/>
-<rect class="bar" x="509.3" y="233.8" width="14.2" height="6.2" rx="1.5" style="animation-delay:336ms"/>
-<rect class="bar" x="527.5" y="234.5" width="14.2" height="5.5" rx="1.5" style="animation-delay:348ms"/>
-<rect class="bar" x="545.7" y="235.4" width="14.2" height="4.6" rx="1.5" style="animation-delay:360ms"/>
-<rect class="bar" x="563.8" y="236.7" width="14.2" height="3.3" rx="1.5" style="animation-delay:372ms"/>
-<rect class="bar" x="582.0" y="232.4" width="14.2" height="7.6" rx="1.5" style="animation-delay:384ms"/>
-<rect class="bar" x="600.2" y="235.9" width="14.2" height="4.1" rx="1.5" style="animation-delay:396ms"/>
-<rect class="bar" x="618.4" y="232.8" width="14.2" height="7.2" rx="1.5" style="animation-delay:408ms"/>
-<rect class="bar" x="636.6" y="233.0" width="14.2" height="7.0" rx="1.5" style="animation-delay:420ms"/>
-<rect class="bar" x="654.8" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:432ms"/>
-<rect class="bar" x="673.0" y="238.0" width="14.2" height="2.0" rx="1.5" style="animation-delay:444ms"/>
-<rect class="bar" x="691.2" y="229.1" width="14.2" height="10.9" rx="1.5" style="animation-delay:456ms"/>
-<rect class="bar" x="709.4" y="230.6" width="14.2" height="9.4" rx="1.5" style="animation-delay:468ms"/>
-<rect class="bar" x="727.5" y="236.5" width="14.2" height="3.5" rx="1.5" style="animation-delay:480ms"/>
+<rect class="bar" x="454.7" y="227.7" width="14.2" height="12.3" rx="1.5" style="animation-delay:300ms"/>
+<rect class="bar top" x="472.9" y="200.7" width="14.2" height="39.3" rx="1.5" style="animation-delay:312ms"/>
+<rect class="bar" x="491.1" y="228.5" width="14.2" height="11.5" rx="1.5" style="animation-delay:324ms"/>
+<rect class="bar" x="509.3" y="228.1" width="14.2" height="11.9" rx="1.5" style="animation-delay:336ms"/>
+<rect class="bar" x="527.5" y="230.8" width="14.2" height="9.2" rx="1.5" style="animation-delay:348ms"/>
+<rect class="bar" x="545.7" y="229.1" width="14.2" height="10.9" rx="1.5" style="animation-delay:360ms"/>
+<rect class="bar" x="563.8" y="229.1" width="14.2" height="10.9" rx="1.5" style="animation-delay:372ms"/>
+<rect class="bar" x="582.0" y="220.5" width="14.2" height="19.5" rx="1.5" style="animation-delay:384ms"/>
+<rect class="bar" x="600.2" y="225.2" width="14.2" height="14.8" rx="1.5" style="animation-delay:396ms"/>
+<rect class="bar" x="618.4" y="216.2" width="14.2" height="23.8" rx="1.5" style="animation-delay:408ms"/>
+<rect class="bar" x="636.6" y="218.8" width="14.2" height="21.2" rx="1.5" style="animation-delay:420ms"/>
+<rect class="bar top" x="654.8" y="214.5" width="14.2" height="25.5" rx="1.5" style="animation-delay:432ms"/>
+<rect class="bar" x="673.0" y="235.5" width="14.2" height="4.5" rx="1.5" style="animation-delay:444ms"/>
+<rect class="bar" x="691.2" y="227.7" width="14.2" height="12.3" rx="1.5" style="animation-delay:456ms"/>
+<rect class="bar" x="709.4" y="226.0" width="14.2" height="14.0" rx="1.5" style="animation-delay:468ms"/>
+<rect class="bar" x="727.5" y="234.4" width="14.2" height="5.6" rx="1.5" style="animation-delay:480ms"/>
 <rect class="bar" x="745.7" y="237.2" width="14.2" height="2.8" rx="1.5" style="animation-delay:492ms"/>
 <rect class="bar" x="763.9" y="231.6" width="14.2" height="8.4" rx="1.5" style="animation-delay:504ms"/>
-<rect class="bar" x="782.1" y="233.8" width="14.2" height="6.2" rx="1.5" style="animation-delay:516ms"/>
-<rect class="bar" x="800.3" y="226.6" width="14.2" height="13.4" rx="1.5" style="animation-delay:528ms"/>
-<rect class="bar" x="818.5" y="222.6" width="14.2" height="17.4" rx="1.5" style="animation-delay:540ms"/>
+<rect class="bar" x="782.1" y="232.8" width="14.2" height="7.2" rx="1.5" style="animation-delay:516ms"/>
+<rect class="bar" x="800.3" y="220.2" width="14.2" height="19.8" rx="1.5" style="animation-delay:528ms"/>
+<rect class="bar" x="818.5" y="222.2" width="14.2" height="17.8" rx="1.5" style="animation-delay:540ms"/>
 <rect class="bar" x="836.7" y="221.9" width="14.2" height="18.1" rx="1.5" style="animation-delay:552ms"/>
-<rect class="bar top" x="854.9" y="216.5" width="14.2" height="23.5" rx="1.5" style="animation-delay:564ms"/>
+<rect class="bar" x="854.9" y="216.5" width="14.2" height="23.5" rx="1.5" style="animation-delay:564ms"/>
 <rect class="bar top" x="873.1" y="209.2" width="14.2" height="30.8" rx="1.5" style="animation-delay:576ms"/>
 <rect class="bar" x="891.2" y="227.0" width="14.2" height="13.0" rx="1.5" style="animation-delay:588ms"/>
 <rect class="bar top" x="909.4" y="198.3" width="14.2" height="41.7" rx="1.5" style="animation-delay:600ms"/>
