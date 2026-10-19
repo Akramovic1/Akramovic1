@@ -2,7 +2,7 @@ name: stats
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    - cron: "17 3 * * 1"  # Mondays 03:17 UTC
   workflow_dispatch:
 
 permissions:
@@ -27,7 +27,7 @@ jobs:
         run: sed -i -e 's/^<!-- stats:start$/<!-- stats:start -->/' -e 's/^stats:end -->$/<!-- stats:end -->/' README.md
       - name: Commit if changed
         run: |
-          git add README.md assets/stats-light.svg assets/stats-dark.svg assets/stats.json
+          git add README.md assets
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

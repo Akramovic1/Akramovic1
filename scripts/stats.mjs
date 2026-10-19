@@ -163,8 +163,7 @@ const full = (n) => n.toLocaleString('en-US');
 
 function render(s, t) {
   const c = THEMES[t];
-  const orgs = s.orgs || [];
-  const H = orgs.length ? 420 : 330;
+  const H = 330;
   const o = [];
   o.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">`,
     `<title id="t">GitHub activity</title>`,
@@ -176,7 +175,6 @@ function render(s, t) {
     `.g{font:500 12px/1 ${MONO};fill:${c.muted}}`,
     `.bar{fill:${c.faint};transform-box:fill-box;transform-origin:bottom;animation:up .9s cubic-bezier(.2,.8,.2,1) both}`,
     `.top{fill:${c.accent}}`,
-    `.o{font:500 12px/1 ${MONO};letter-spacing:1.6px;fill:${c.fg}}`,
     `@keyframes up{from{transform:scaleY(0)}}`,
     `@media (prefers-reduced-motion:reduce){.bar{animation:none}}`,
     `</style>`);
@@ -214,21 +212,6 @@ function render(s, t) {
   const segs = rest > 0 ? [...shown, ['Other', rest]] : shown;
   o.push(`<text class="l" x="0" y="280">LANGUAGES</text>`);
 
-  // Organizations: greyscale avatar + mono name in a hairline chip.
-  if (orgs.length) {
-    o.push(`<defs><filter id="mono"><feColorMatrix type="saturate" values="0"/></filter></defs>`,
-      `<text class="l" x="0" y="372">ORGANIZATIONS</text>`);
-    let cx = 0;
-    orgs.forEach((g, i) => {
-      const label = g.name.toUpperCase();
-      const w = 40 + label.length * 9;
-      o.push(`<rect x="${cx + 0.5}" y="386.5" width="${w}" height="27" rx="6" fill="none" stroke="${c.faint}"/>`,
-        `<clipPath id="av${i}"><rect x="${cx + 8}" y="392" width="16" height="16" rx="3"/></clipPath>`,
-        `<image href="${g.avatar}" x="${cx + 8}" y="392" width="16" height="16" clip-path="url(#av${i})" filter="url(#mono)"/>`,
-        `<text class="o" x="${cx + 32}" y="404.5">${esc(label)}</text>`);
-      cx += w + 10;
-    });
-  }
   let x = 0;
   const legend = [];
   segs.forEach(([name, bytes], i) => {
@@ -238,9 +221,33 @@ function render(s, t) {
     x += w;
   });
   o.push(`<text class="g" x="0" y="322">${esc(legend.join('  ·  '))}</text>`,
-    `<text class="g" x="${W}" y="${orgs.length ? 404 : 322}" text-anchor="end">${esc(`PUBLIC + PRIVATE · ${s.updated}`)}</text>`,
+    `<text class="g" x="${W}" y="322" text-anchor="end">${esc(`PUBLIC + PRIVATE · ${s.updated}`)}</text>`,
     `</svg>`);
   return o.join('\n') + '\n';
+}
+
+// Each organization is its own small image so the README can wrap it in a link
+// (a single card image cannot hold per-item links).
+const MONO_ATTR = MONO.replace(/"/g, "'"); // usable inside a style="" attribute
+
+function chip(g, t) {
+  const c = THEMES[t];
+  const label = g.name.toUpperCase();
+  const w = 41 + label.length * 9;
+  return [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${w + 1}" height="28" viewBox="0 0 ${w + 1} 28" role="img" aria-label="${esc(g.name)}">`,
+    `<defs><filter id="m"><feColorMatrix type="saturate" values="0"/></filter><clipPath id="a"><rect x="8" y="6" width="16" height="16" rx="3"/></clipPath></defs>`,
+    `<rect x=".5" y=".5" width="${w}" height="27" rx="6" fill="none" stroke="${c.faint}"/>`,
+    `<image href="${g.avatar}" x="8" y="6" width="16" height="16" clip-path="url(#a)" filter="url(#m)"/>`,
+    `<text x="32" y="18.5" style="font:500 12px/1 ${MONO_ATTR};letter-spacing:1.6px" fill="${c.fg}">${esc(label)}</text>`,
+    `</svg>`,
+  ].join('\n') + '\n';
+}
+
+function chipLabel(t) {
+  const c = THEMES[t];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="28" viewBox="0 0 128 28" role="img" aria-label="Organizations">` +
+    `<text x="0" y="18" style="font:500 12px/1 ${MONO_ATTR};letter-spacing:1.8px" fill="${c.muted}">ORGANIZATIONS</text></svg>\n`;
 }
 
 // ---------- main ----------
@@ -249,5 +256,9 @@ const fromIdx = process.argv.indexOf('--from');
 const stats = fromIdx > -1 ? JSON.parse(await readFile(process.argv[fromIdx + 1], 'utf8')) : await collect();
 await mkdir(OUT, { recursive: true });
 if (fromIdx === -1) await writeFile(new URL('stats.json', OUT), JSON.stringify(stats, null, 2) + '\n');
-for (const t of Object.keys(THEMES)) await writeFile(new URL(`stats-${t}.svg`, OUT), render(stats, t));
+for (const t of Object.keys(THEMES)) {
+  await writeFile(new URL(`stats-${t}.svg`, OUT), render(stats, t));
+  await writeFile(new URL(`org-label-${t}.svg`, OUT), chipLabel(t));
+  for (const g of stats.orgs || []) await writeFile(new URL(`org-${g.login}-${t}.svg`, OUT), chip(g, t));
+}
 console.log(`rendered stats for ${stats.login}: ${stats.contributions} contributions, +${stats.additions}/-${stats.deletions} lines`);
