@@ -236,9 +236,9 @@ function chip(g, t) {
   const w = 41 + label.length * 9;
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" width="${w + 1}" height="28" viewBox="0 0 ${w + 1} 28" role="img" aria-label="${esc(g.name)}">`,
-    `<defs><filter id="m"><feColorMatrix type="saturate" values="0"/></filter><clipPath id="a"><rect x="8" y="6" width="16" height="16" rx="3"/></clipPath></defs>`,
+    `<defs><clipPath id="a"><rect x="8" y="6" width="16" height="16" rx="3"/></clipPath></defs>`,
     `<rect x=".5" y=".5" width="${w}" height="27" rx="6" fill="none" stroke="${c.faint}"/>`,
-    `<image href="${g.avatar}" x="8" y="6" width="16" height="16" clip-path="url(#a)" filter="url(#m)"/>`,
+    `<image href="${g.avatar}" x="8" y="6" width="16" height="16" clip-path="url(#a)"/>`,
     `<text x="32" y="18.5" style="font:500 12px/1 ${MONO_ATTR};letter-spacing:1.6px" fill="${c.fg}">${esc(label)}</text>`,
     `</svg>`,
   ].join('\n') + '\n';
