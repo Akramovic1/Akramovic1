@@ -23,13 +23,13 @@ const THEMES = {
 
 // ---------- fetch ----------
 
-async function gh(path, init = {}) {
+async function gh(path, init = {}, tolerate = []) {
   const res = await fetch(path.startsWith('http') ? path : API + path, {
     ...init,
     headers: { authorization: `bearer ${TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'profile-stats', ...init.headers },
   });
   // Actions logs on a public repo are public: never print private repo paths or response bodies.
-  if (!res.ok && res.status !== 202 && res.status !== 204) throw new Error(`GitHub API ${res.status} on ${path.replace(/\/repos\/[^/]+\/[^/]+/, '/repos/<redacted>')}`);
+  if (!res.ok && res.status !== 202 && res.status !== 204 && !tolerate.includes(res.status)) throw new Error(`GitHub API ${res.status} on ${path.replace(/\/repos\/[^/]+\/[^/]+/, '/repos/<redacted>')}`);
   return res;
 }
 
@@ -124,11 +124,13 @@ async function collect() {
 
   // Commits and lines added / removed by you, from each repo's contributor statistics
   // (these see private repos the token can read, unlike contributionsCollection).
-  let additions = 0, deletions = 0, commits = 0, activeRepos = 0, skipped = 0;
+  let additions = 0, deletions = 0, commits = 0, activeRepos = 0, skipped = 0, denied = 0;
   await pool(repos.filter((r) => !r.isFork), 4, async (r) => {
     for (let attempt = 0; attempt < 8; attempt++) {
-      const res = await gh(`/repos/${r.nameWithOwner}/stats/contributors`);
+      // 401/403/404: e.g. an org with SSO the token is not authorised for. Skip, never fail the run.
+      const res = await gh(`/repos/${r.nameWithOwner}/stats/contributors`, {}, [401, 403, 404]);
       if (res.status === 204) return;
+      if (!res.ok && res.status !== 202) { denied++; return; }
       if (res.status === 202) { await sleep(3000 + attempt * 2000); continue; } // GitHub is computing the stats
       const me = (await res.json()).find((c) => c.author?.login === login);
       if (me) {
@@ -141,6 +143,7 @@ async function collect() {
     skipped++;
   });
   if (skipped) console.warn(`line stats not ready for ${skipped} repositories, skipped`);
+  if (denied) console.warn(`no access to ${denied} repositories (check token scopes / org SSO), skipped`);
 
   return {
     login, since: new Date(viewer.createdAt).getUTCFullYear(), updated: now.toISOString().slice(0, 10),
