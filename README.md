@@ -10,7 +10,7 @@
   <a href="mailto:me@ahmedakram.dev">me@ahmedakram.dev</a>
 </samp></p>
 
-<!-- stats:start
+<!-- stats:start -->
 <br>
 
 <picture>
@@ -18,4 +18,4 @@
   <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
   <img alt="GitHub activity across public and private repositories." src="assets/stats-light.svg" width="100%">
 </picture>
-stats:end -->
+<!-- stats:end -->
