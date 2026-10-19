@@ -10,6 +10,13 @@
   <a href="mailto:me@ahmedakram.dev">me@ahmedakram.dev</a>
 </samp></p>
 
+<p><samp>
+  <a href="https://github.com/FuzeXLabs"><img src="https://github.com/FuzeXLabs.png?size=40" width="16" height="16" alt="" align="center">&nbsp;Fuze X Labs</a> &nbsp;
+  <a href="https://github.com/Ferru-io"><img src="https://github.com/Ferru-io.png?size=40" width="16" height="16" alt="" align="center">&nbsp;Ferru</a> &nbsp;
+  <a href="https://github.com/Cusp-bio"><img src="https://github.com/Cusp-bio.png?size=40" width="16" height="16" alt="" align="center">&nbsp;Cusp.bio</a> &nbsp;
+  <a href="https://github.com/Bleui-ai"><img src="https://github.com/Bleui-ai.png?size=40" width="16" height="16" alt="" align="center">&nbsp;Bleui.ai</a>
+</samp></p>
+
 <!-- stats:start -->
 <br>
 

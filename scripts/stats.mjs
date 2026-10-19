@@ -49,9 +49,27 @@ async function pool(items, size, fn) {
   return out;
 }
 
-const YEAR_Q = `query($from:DateTime!,$to:DateTime!){viewer{contributionsCollection(from:$from,to:$to){
-  totalCommitContributions totalPullRequestContributions restrictedContributionsCount
-  contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}`;
+// Contributions come from the public calendar, the same numbers the profile page shows
+// (private contributions included as counts when that profile setting is on). The GraphQL
+// contributionsCollection undercounts private work for fine-grained tokens.
+async function calendar(login, from, to) {
+  const q = from ? `?from=${from}&to=${to}` : '';
+  const res = await fetch(`https://github.com/users/${login}/contributions${q}`, { headers: { 'user-agent': 'profile-stats' } });
+  if (!res.ok) throw new Error(`calendar ${res.status}`);
+  const html = await res.text();
+  const cells = {};
+  for (const m of html.matchAll(/<td\b[^>]*>/g)) {
+    const date = m[0].match(/data-date="([^"]+)"/)?.[1], id = m[0].match(/\bid="([^"]+)"/)?.[1], week = m[0].match(/data-ix="(\d+)"/)?.[1];
+    if (date && id) cells[id] = { date, week: Number(week), count: 0 };
+  }
+  for (const m of html.matchAll(/<tool-tip\b[^>]*for="([^"]+)"[^>]*>([^<]*)<\/tool-tip>/g)) {
+    const n = m[2].match(/^([\d,]+) contributions? on/);
+    if (cells[m[1]] && n) cells[m[1]].count = Number(n[1].replace(/,/g, ''));
+  }
+  const days = Object.values(cells);
+  if (!days.length) throw new Error('calendar: no days parsed');
+  return days;
+}
 
 const REPOS_Q = `query($after:String){viewer{repositories(first:100,after:$after,ownerAffiliations:[OWNER,ORGANIZATION_MEMBER,COLLABORATOR]){
   pageInfo{hasNextPage endCursor}
@@ -64,23 +82,18 @@ async function collect() {
   const login = viewer.login;
   const now = new Date();
 
-  // Contributions per calendar year since the account was created (API caps a window at one year).
-  // Private contributions the token cannot itemise come back as restrictedContributionsCount;
-  // the profile calendar counts them, so we do too.
-  let contributions = 0, pullRequests = 0;
+  // All-time contributions, one calendar year at a time.
+  let contributions = 0;
   for (let y = new Date(viewer.createdAt).getUTCFullYear(); y <= now.getUTCFullYear(); y++) {
-    const from = new Date(Date.UTC(y, 0, 1)).toISOString();
-    const to = y === now.getUTCFullYear() ? now.toISOString() : new Date(Date.UTC(y, 11, 31, 23, 59, 59)).toISOString();
-    const c = (await gql(YEAR_Q, { from, to })).viewer.contributionsCollection;
-    contributions += c.contributionCalendar.totalContributions + c.restrictedContributionsCount;
-    pullRequests += c.totalPullRequestContributions;
+    contributions += (await calendar(login, `${y}-01-01`, `${y}-12-31`)).reduce((t, d) => t + d.count, 0);
   }
 
   // Rolling last 12 months, for the weekly strip.
-  const yearAgo = new Date(now); yearAgo.setUTCFullYear(now.getUTCFullYear() - 1);
-  const last = (await gql(YEAR_Q, { from: yearAgo.toISOString(), to: now.toISOString() })).viewer.contributionsCollection;
-  const weeks = last.contributionCalendar.weeks.map((w) => w.contributionDays.reduce((s, d) => s + d.contributionCount, 0));
-  const activeDays = last.contributionCalendar.weeks.flatMap((w) => w.contributionDays).filter((d) => d.contributionCount > 0).length;
+  const lastDays = await calendar(login);
+  const weeks = [];
+  for (const d of lastDays) weeks[d.week] = (weeks[d.week] || 0) + d.count;
+  const lastYear = lastDays.reduce((t, d) => t + d.count, 0);
+  const activeDays = lastDays.filter((d) => d.count > 0).length;
 
   // Repositories (own + orgs + collaborations), languages by bytes over non-fork repos you own.
   const repos = [];
@@ -119,8 +132,8 @@ async function collect() {
 
   return {
     login, since: new Date(viewer.createdAt).getUTCFullYear(), updated: now.toISOString().slice(0, 10),
-    contributions, commits, activeRepos, pullRequests, additions, deletions,
-    lastYear: last.contributionCalendar.totalContributions + last.restrictedContributionsCount, activeDays, weeks,
+    contributions, commits, activeRepos, additions, deletions,
+    lastYear, activeDays, weeks: Array.from(weeks, (w) => w || 0),
     repositories: owned.length, privateRepositories: owned.filter((r) => r.isPrivate).length,
     languages: Object.entries(langs).sort((a, b) => b[1] - a[1]),
   };
