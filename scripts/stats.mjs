@@ -12,6 +12,8 @@ const API = 'https://api.github.com';
 const TOKEN = process.env.STATS_TOKEN || process.env.GITHUB_TOKEN;
 
 const W = 960;
+// Org memberships are private, so the API cannot list them; keep them here.
+const ORGS = [['FuzeXLabs', 'Fuze X Labs'], ['Ferru-io', 'Ferru'], ['Cusp-bio', 'Cusp.bio'], ['Bleui-ai', 'Bleui.ai']];
 const SANS = '-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif';
 const MONO = 'ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace';
 const THEMES = {
@@ -76,6 +78,16 @@ const REPOS_Q = `query($after:String){viewer{repositories(first:100,after:$after
   nodes{nameWithOwner isFork isPrivate owner{login}
     languages(first:20,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}}}}`;
 
+// Avatars are inlined as data URIs: an SVG shown through <img> cannot load external images.
+async function orgAvatars() {
+  return Promise.all(ORGS.map(async ([login, name]) => {
+    const res = await fetch(`https://github.com/${login}.png?size=64`, { headers: { 'user-agent': 'profile-stats' } });
+    if (!res.ok) throw new Error(`avatar ${res.status}`);
+    const type = res.headers.get('content-type') || 'image/png';
+    return { login, name, avatar: `data:${type};base64,${Buffer.from(await res.arrayBuffer()).toString('base64')}` };
+  }));
+}
+
 async function collect() {
   if (!TOKEN) throw new Error('Set STATS_TOKEN (see README of this repo).');
   const { viewer } = await gql('{viewer{login createdAt}}');
@@ -136,6 +148,7 @@ async function collect() {
     lastYear, activeDays, weeks: Array.from(weeks, (w) => w || 0),
     repositories: owned.length, privateRepositories: owned.filter((r) => r.isPrivate).length,
     languages: Object.entries(langs).sort((a, b) => b[1] - a[1]),
+    orgs: await orgAvatars(),
   };
 }
 
@@ -147,8 +160,10 @@ const full = (n) => n.toLocaleString('en-US');
 
 function render(s, t) {
   const c = THEMES[t];
+  const orgs = s.orgs || [];
+  const H = orgs.length ? 420 : 330;
   const o = [];
-  o.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="330" viewBox="0 0 ${W} 330" role="img" aria-labelledby="t d">`,
+  o.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">`,
     `<title id="t">GitHub activity</title>`,
     `<desc id="d">${esc(`${full(s.contributions)} contributions since ${s.since}, ${full(s.additions)} lines added, ${full(s.commits)} commits, ${s.repositories} repositories including ${s.privateRepositories} private.`)}</desc>`,
     `<style>`,
@@ -158,6 +173,7 @@ function render(s, t) {
     `.g{font:500 12px/1 ${MONO};fill:${c.muted}}`,
     `.bar{fill:${c.faint};transform-box:fill-box;transform-origin:bottom;animation:up .9s cubic-bezier(.2,.8,.2,1) both}`,
     `.top{fill:${c.accent}}`,
+    `.o{font:500 12px/1 ${MONO};letter-spacing:1.6px;fill:${c.fg}}`,
     `@keyframes up{from{transform:scaleY(0)}}`,
     `@media (prefers-reduced-motion:reduce){.bar{animation:none}}`,
     `</style>`);
@@ -193,6 +209,22 @@ function render(s, t) {
   const rest = totalBytes - shown.reduce((a, [, b]) => a + b, 0);
   const segs = rest > 0 ? [...shown, ['Other', rest]] : shown;
   o.push(`<text class="l" x="0" y="280">LANGUAGES</text>`);
+
+  // Organizations: greyscale avatar + mono name in a hairline chip.
+  if (orgs.length) {
+    o.push(`<defs><filter id="mono"><feColorMatrix type="saturate" values="0"/></filter></defs>`,
+      `<text class="l" x="0" y="372">ORGANIZATIONS</text>`);
+    let cx = 0;
+    orgs.forEach((g, i) => {
+      const label = g.name.toUpperCase();
+      const w = 40 + label.length * 9;
+      o.push(`<rect x="${cx + 0.5}" y="386.5" width="${w}" height="27" rx="6" fill="none" stroke="${c.faint}"/>`,
+        `<clipPath id="av${i}"><rect x="${cx + 8}" y="392" width="16" height="16" rx="3"/></clipPath>`,
+        `<image href="${g.avatar}" x="${cx + 8}" y="392" width="16" height="16" clip-path="url(#av${i})" filter="url(#mono)"/>`,
+        `<text class="o" x="${cx + 32}" y="404.5">${esc(label)}</text>`);
+      cx += w + 10;
+    });
+  }
   let x = 0;
   const legend = [];
   segs.forEach(([name, bytes], i) => {
@@ -202,7 +234,7 @@ function render(s, t) {
     x += w;
   });
   o.push(`<text class="g" x="0" y="322">${esc(legend.join('  ·  '))}</text>`,
-    `<text class="g" x="${W}" y="322" text-anchor="end">${esc(`PUBLIC + PRIVATE · ${s.updated}`)}</text>`,
+    `<text class="g" x="${W}" y="${orgs.length ? 404 : 322}" text-anchor="end">${esc(`PUBLIC + PRIVATE · ${s.updated}`)}</text>`,
     `</svg>`);
   return o.join('\n') + '\n';
 }
