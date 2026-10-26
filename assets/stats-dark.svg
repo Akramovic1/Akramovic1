@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="t d">
 <title id="t">GitHub activity</title>
-<desc id="d">10,202 contributions since 2019, 7,156,386 lines added, 7,608 commits, 146 repositories including 59 private.</desc>
+<desc id="d">10,451 contributions since 2019, 7,365,057 lines added, 7,873 commits, 151 repositories including 61 private.</desc>
 <style>
 .n{font:650 46px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-1.6px;fill:#f0f6fc}
 .l{font:500 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;letter-spacing:1.8px;fill:#8b949e}
@@ -12,82 +12,82 @@
 @media (prefers-reduced-motion:reduce){.bar{animation:none}}
 </style>
 <text class="l" x="0" y="12">CONTRIBUTIONS</text>
-<text class="n" x="-2" y="66">10,202</text>
+<text class="n" x="-2" y="66">10,451</text>
 <text class="s" x="0" y="94">since 2019</text>
 <rect x="220" y="0" width="1" height="96" fill="#30363d"/>
 <text class="l" x="240" y="12">LINES ADDED</text>
-<text class="n" x="238" y="66">7.2M</text>
-<text class="s" x="240" y="94">589k removed</text>
+<text class="n" x="238" y="66">7.4M</text>
+<text class="s" x="240" y="94">619k removed</text>
 <rect x="460" y="0" width="1" height="96" fill="#30363d"/>
 <text class="l" x="480" y="12">COMMITS</text>
-<text class="n" x="478" y="66">7,608</text>
-<text class="s" x="480" y="94">across 134 repositories</text>
+<text class="n" x="478" y="66">7,873</text>
+<text class="s" x="480" y="94">across 137 repositories</text>
 <rect x="700" y="0" width="1" height="96" fill="#30363d"/>
 <text class="l" x="720" y="12">REPOSITORIES</text>
-<text class="n" x="718" y="66">146</text>
-<text class="s" x="720" y="94">59 private</text>
+<text class="n" x="718" y="66">151</text>
+<text class="s" x="720" y="94">61 private</text>
 <text class="l" x="0" y="146">LAST 12 MONTHS</text>
-<text class="l" x="960" y="146" text-anchor="end">6,494 CONTRIBUTIONS · 311 ACTIVE DAYS</text>
-<rect class="bar" x="0.0" y="222.6" width="14.2" height="17.4" rx="1.5" style="animation-delay:0ms"/>
-<rect class="bar" x="18.2" y="213.8" width="14.2" height="26.2" rx="1.5" style="animation-delay:12ms"/>
-<rect class="bar" x="36.4" y="201.4" width="14.2" height="38.6" rx="1.5" style="animation-delay:24ms"/>
-<rect class="bar" x="54.6" y="205.9" width="14.2" height="34.1" rx="1.5" style="animation-delay:36ms"/>
-<rect class="bar" x="72.8" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:48ms"/>
-<rect class="bar" x="90.9" y="200.2" width="14.2" height="39.8" rx="1.5" style="animation-delay:60ms"/>
-<rect class="bar" x="109.1" y="191.8" width="14.2" height="48.2" rx="1.5" style="animation-delay:72ms"/>
-<rect class="bar" x="127.3" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:84ms"/>
-<rect class="bar" x="145.5" y="208.2" width="14.2" height="31.8" rx="1.5" style="animation-delay:96ms"/>
-<rect class="bar" x="163.7" y="209.1" width="14.2" height="30.9" rx="1.5" style="animation-delay:108ms"/>
-<rect class="bar" x="181.9" y="194.3" width="14.2" height="45.7" rx="1.5" style="animation-delay:120ms"/>
-<rect class="bar" x="200.1" y="199.0" width="14.2" height="41.0" rx="1.5" style="animation-delay:132ms"/>
-<rect class="bar" x="218.3" y="194.7" width="14.2" height="45.3" rx="1.5" style="animation-delay:144ms"/>
-<rect class="bar" x="236.5" y="204.6" width="14.2" height="35.4" rx="1.5" style="animation-delay:156ms"/>
-<rect class="bar" x="254.6" y="205.2" width="14.2" height="34.8" rx="1.5" style="animation-delay:168ms"/>
-<rect class="bar" x="272.8" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:180ms"/>
-<rect class="bar" x="291.0" y="213.8" width="14.2" height="26.2" rx="1.5" style="animation-delay:192ms"/>
-<rect class="bar" x="309.2" y="193.6" width="14.2" height="46.4" rx="1.5" style="animation-delay:204ms"/>
-<rect class="bar" x="327.4" y="191.2" width="14.2" height="48.8" rx="1.5" style="animation-delay:216ms"/>
-<rect class="bar" x="345.6" y="202.9" width="14.2" height="37.1" rx="1.5" style="animation-delay:228ms"/>
-<rect class="bar" x="363.8" y="206.6" width="14.2" height="33.4" rx="1.5" style="animation-delay:240ms"/>
-<rect class="bar" x="382.0" y="197.4" width="14.2" height="42.6" rx="1.5" style="animation-delay:252ms"/>
-<rect class="bar" x="400.2" y="198.0" width="14.2" height="42.0" rx="1.5" style="animation-delay:264ms"/>
-<rect class="bar" x="418.3" y="199.0" width="14.2" height="41.0" rx="1.5" style="animation-delay:276ms"/>
-<rect class="bar" x="436.5" y="189.9" width="14.2" height="50.1" rx="1.5" style="animation-delay:288ms"/>
-<rect class="bar" x="454.7" y="182.8" width="14.2" height="57.2" rx="1.5" style="animation-delay:300ms"/>
-<rect class="bar top" x="472.9" y="170.8" width="14.2" height="69.2" rx="1.5" style="animation-delay:312ms"/>
-<rect class="bar" x="491.1" y="183.5" width="14.2" height="56.5" rx="1.5" style="animation-delay:324ms"/>
-<rect class="bar" x="509.3" y="183.2" width="14.2" height="56.8" rx="1.5" style="animation-delay:336ms"/>
-<rect class="bar" x="527.5" y="185.9" width="14.2" height="54.1" rx="1.5" style="animation-delay:348ms"/>
+<text class="l" x="960" y="146" text-anchor="end">6,741 CONTRIBUTIONS · 316 ACTIVE DAYS</text>
+<rect class="bar" x="0.0" y="213.8" width="14.2" height="26.2" rx="1.5" style="animation-delay:0ms"/>
+<rect class="bar" x="18.2" y="201.4" width="14.2" height="38.6" rx="1.5" style="animation-delay:12ms"/>
+<rect class="bar" x="36.4" y="205.9" width="14.2" height="34.1" rx="1.5" style="animation-delay:24ms"/>
+<rect class="bar" x="54.6" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:36ms"/>
+<rect class="bar" x="72.8" y="200.2" width="14.2" height="39.8" rx="1.5" style="animation-delay:48ms"/>
+<rect class="bar" x="90.9" y="191.8" width="14.2" height="48.2" rx="1.5" style="animation-delay:60ms"/>
+<rect class="bar" x="109.1" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:72ms"/>
+<rect class="bar" x="127.3" y="208.2" width="14.2" height="31.8" rx="1.5" style="animation-delay:84ms"/>
+<rect class="bar" x="145.5" y="209.1" width="14.2" height="30.9" rx="1.5" style="animation-delay:96ms"/>
+<rect class="bar" x="163.7" y="194.3" width="14.2" height="45.7" rx="1.5" style="animation-delay:108ms"/>
+<rect class="bar" x="181.9" y="199.0" width="14.2" height="41.0" rx="1.5" style="animation-delay:120ms"/>
+<rect class="bar" x="200.1" y="194.7" width="14.2" height="45.3" rx="1.5" style="animation-delay:132ms"/>
+<rect class="bar" x="218.3" y="204.6" width="14.2" height="35.4" rx="1.5" style="animation-delay:144ms"/>
+<rect class="bar" x="236.5" y="205.2" width="14.2" height="34.8" rx="1.5" style="animation-delay:156ms"/>
+<rect class="bar" x="254.6" y="203.4" width="14.2" height="36.6" rx="1.5" style="animation-delay:168ms"/>
+<rect class="bar" x="272.8" y="213.8" width="14.2" height="26.2" rx="1.5" style="animation-delay:180ms"/>
+<rect class="bar" x="291.0" y="193.6" width="14.2" height="46.4" rx="1.5" style="animation-delay:192ms"/>
+<rect class="bar" x="309.2" y="191.2" width="14.2" height="48.8" rx="1.5" style="animation-delay:204ms"/>
+<rect class="bar" x="327.4" y="202.9" width="14.2" height="37.1" rx="1.5" style="animation-delay:216ms"/>
+<rect class="bar" x="345.6" y="206.6" width="14.2" height="33.4" rx="1.5" style="animation-delay:228ms"/>
+<rect class="bar" x="363.8" y="197.4" width="14.2" height="42.6" rx="1.5" style="animation-delay:240ms"/>
+<rect class="bar" x="382.0" y="198.0" width="14.2" height="42.0" rx="1.5" style="animation-delay:252ms"/>
+<rect class="bar" x="400.2" y="199.0" width="14.2" height="41.0" rx="1.5" style="animation-delay:264ms"/>
+<rect class="bar" x="418.3" y="189.9" width="14.2" height="50.1" rx="1.5" style="animation-delay:276ms"/>
+<rect class="bar" x="436.5" y="182.8" width="14.2" height="57.2" rx="1.5" style="animation-delay:288ms"/>
+<rect class="bar top" x="454.7" y="170.8" width="14.2" height="69.2" rx="1.5" style="animation-delay:300ms"/>
+<rect class="bar" x="472.9" y="183.5" width="14.2" height="56.5" rx="1.5" style="animation-delay:312ms"/>
+<rect class="bar" x="491.1" y="183.2" width="14.2" height="56.8" rx="1.5" style="animation-delay:324ms"/>
+<rect class="bar" x="509.3" y="185.9" width="14.2" height="54.1" rx="1.5" style="animation-delay:336ms"/>
+<rect class="bar" x="527.5" y="184.1" width="14.2" height="55.9" rx="1.5" style="animation-delay:348ms"/>
 <rect class="bar" x="545.7" y="184.1" width="14.2" height="55.9" rx="1.5" style="animation-delay:360ms"/>
-<rect class="bar" x="563.8" y="184.1" width="14.2" height="55.9" rx="1.5" style="animation-delay:372ms"/>
-<rect class="bar" x="582.0" y="178.1" width="14.2" height="61.9" rx="1.5" style="animation-delay:384ms"/>
-<rect class="bar" x="600.2" y="180.9" width="14.2" height="59.1" rx="1.5" style="animation-delay:396ms"/>
-<rect class="bar" x="618.4" y="176.0" width="14.2" height="64.0" rx="1.5" style="animation-delay:408ms"/>
-<rect class="bar" x="636.6" y="177.2" width="14.2" height="62.8" rx="1.5" style="animation-delay:420ms"/>
-<rect class="bar top" x="654.8" y="175.3" width="14.2" height="64.7" rx="1.5" style="animation-delay:432ms"/>
-<rect class="bar" x="673.0" y="193.2" width="14.2" height="46.8" rx="1.5" style="animation-delay:444ms"/>
-<rect class="bar" x="691.2" y="182.8" width="14.2" height="57.2" rx="1.5" style="animation-delay:456ms"/>
-<rect class="bar" x="709.4" y="181.5" width="14.2" height="58.5" rx="1.5" style="animation-delay:468ms"/>
-<rect class="bar" x="727.5" y="191.0" width="14.2" height="49.0" rx="1.5" style="animation-delay:480ms"/>
-<rect class="bar" x="745.7" y="198.0" width="14.2" height="42.0" rx="1.5" style="animation-delay:492ms"/>
-<rect class="bar" x="763.9" y="186.7" width="14.2" height="53.3" rx="1.5" style="animation-delay:504ms"/>
-<rect class="bar" x="782.1" y="188.4" width="14.2" height="51.6" rx="1.5" style="animation-delay:516ms"/>
-<rect class="bar" x="800.3" y="177.9" width="14.2" height="62.1" rx="1.5" style="animation-delay:528ms"/>
-<rect class="bar" x="818.5" y="179.0" width="14.2" height="61.0" rx="1.5" style="animation-delay:540ms"/>
-<rect class="bar" x="836.7" y="178.8" width="14.2" height="61.2" rx="1.5" style="animation-delay:552ms"/>
-<rect class="bar" x="854.9" y="176.2" width="14.2" height="63.8" rx="1.5" style="animation-delay:564ms"/>
-<rect class="bar top" x="873.1" y="173.4" width="14.2" height="66.6" rx="1.5" style="animation-delay:576ms"/>
-<rect class="bar" x="891.2" y="182.3" width="14.2" height="57.7" rx="1.5" style="animation-delay:588ms"/>
-<rect class="bar top" x="909.4" y="170.2" width="14.2" height="69.8" rx="1.5" style="animation-delay:600ms"/>
-<rect class="bar top" x="927.6" y="164.0" width="14.2" height="76.0" rx="1.5" style="animation-delay:612ms"/>
-<rect class="bar" x="945.8" y="179.0" width="14.2" height="61.0" rx="1.5" style="animation-delay:624ms"/>
+<rect class="bar" x="563.8" y="178.1" width="14.2" height="61.9" rx="1.5" style="animation-delay:372ms"/>
+<rect class="bar" x="582.0" y="180.9" width="14.2" height="59.1" rx="1.5" style="animation-delay:384ms"/>
+<rect class="bar" x="600.2" y="176.0" width="14.2" height="64.0" rx="1.5" style="animation-delay:396ms"/>
+<rect class="bar" x="618.4" y="177.2" width="14.2" height="62.8" rx="1.5" style="animation-delay:408ms"/>
+<rect class="bar" x="636.6" y="175.3" width="14.2" height="64.7" rx="1.5" style="animation-delay:420ms"/>
+<rect class="bar" x="654.8" y="193.2" width="14.2" height="46.8" rx="1.5" style="animation-delay:432ms"/>
+<rect class="bar" x="673.0" y="182.8" width="14.2" height="57.2" rx="1.5" style="animation-delay:444ms"/>
+<rect class="bar" x="691.2" y="181.5" width="14.2" height="58.5" rx="1.5" style="animation-delay:456ms"/>
+<rect class="bar" x="709.4" y="191.0" width="14.2" height="49.0" rx="1.5" style="animation-delay:468ms"/>
+<rect class="bar" x="727.5" y="198.0" width="14.2" height="42.0" rx="1.5" style="animation-delay:480ms"/>
+<rect class="bar" x="745.7" y="186.7" width="14.2" height="53.3" rx="1.5" style="animation-delay:492ms"/>
+<rect class="bar" x="763.9" y="188.3" width="14.2" height="51.7" rx="1.5" style="animation-delay:504ms"/>
+<rect class="bar" x="782.1" y="177.7" width="14.2" height="62.3" rx="1.5" style="animation-delay:516ms"/>
+<rect class="bar" x="800.3" y="179.0" width="14.2" height="61.0" rx="1.5" style="animation-delay:528ms"/>
+<rect class="bar" x="818.5" y="178.8" width="14.2" height="61.2" rx="1.5" style="animation-delay:540ms"/>
+<rect class="bar" x="836.7" y="176.2" width="14.2" height="63.8" rx="1.5" style="animation-delay:552ms"/>
+<rect class="bar top" x="854.9" y="173.4" width="14.2" height="66.6" rx="1.5" style="animation-delay:564ms"/>
+<rect class="bar" x="873.1" y="182.3" width="14.2" height="57.7" rx="1.5" style="animation-delay:576ms"/>
+<rect class="bar top" x="891.2" y="170.2" width="14.2" height="69.8" rx="1.5" style="animation-delay:588ms"/>
+<rect class="bar top" x="909.4" y="164.0" width="14.2" height="76.0" rx="1.5" style="animation-delay:600ms"/>
+<rect class="bar top" x="927.6" y="171.5" width="14.2" height="68.5" rx="1.5" style="animation-delay:612ms"/>
+<rect class="bar" x="945.8" y="198.7" width="14.2" height="41.3" rx="1.5" style="animation-delay:624ms"/>
 <text class="l" x="0" y="280">LANGUAGES</text>
-<rect x="0.0" y="292" width="580.6" height="6" rx="1" fill="#a78bfa"/>
-<rect x="582.6" y="292" width="108.4" height="6" rx="1" fill="#f0f6fc"/>
-<rect x="693.0" y="292" width="77.6" height="6" rx="1" fill="#c9d1d9"/>
-<rect x="772.6" y="292" width="62.0" height="6" rx="1" fill="#8b949e"/>
-<rect x="836.7" y="292" width="15.1" height="6" rx="1" fill="#6e7681"/>
-<rect x="853.8" y="292" width="104.2" height="6" rx="1" fill="#30363d"/>
-<text class="g" x="0" y="322">TypeScript 61%  ·  Python 12%  ·  Dart 8%  ·  JavaScript 7%  ·  C 2%  ·  Other 11%</text>
-<text class="g" x="960" y="322" text-anchor="end">PUBLIC + PRIVATE · 2026-10-19</text>
+<rect x="0.0" y="292" width="599.3" height="6" rx="1" fill="#a78bfa"/>
+<rect x="601.3" y="292" width="101.9" height="6" rx="1" fill="#f0f6fc"/>
+<rect x="705.2" y="292" width="72.8" height="6" rx="1" fill="#c9d1d9"/>
+<rect x="780.1" y="292" width="59.7" height="6" rx="1" fill="#8b949e"/>
+<rect x="841.8" y="292" width="14.1" height="6" rx="1" fill="#6e7681"/>
+<rect x="857.9" y="292" width="100.1" height="6" rx="1" fill="#30363d"/>
+<text class="g" x="0" y="322">TypeScript 63%  ·  Python 11%  ·  Dart 8%  ·  JavaScript 6%  ·  C 2%  ·  Other 11%</text>
+<text class="g" x="960" y="322" text-anchor="end">PUBLIC + PRIVATE · 2026-10-26</text>
 </svg>
