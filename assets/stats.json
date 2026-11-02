@@ -1,16 +1,15 @@
 {
   "login": "Akramovic1",
   "since": 2019,
-  "updated": "2026-10-26",
-  "contributions": 10451,
-  "commits": 7873,
-  "activeRepos": 137,
-  "additions": 7365057,
-  "deletions": 619267,
-  "lastYear": 6741,
-  "activeDays": 316,
+  "updated": "2026-11-02",
+  "contributions": 11155,
+  "commits": 8349,
+  "activeRepos": 141,
+  "additions": 7831031,
+  "deletions": 661741,
+  "lastYear": 7439,
+  "activeDays": 322,
   "weeks": [
-    6,
     22,
     14,
     18,
@@ -58,22 +57,23 @@
     202,
     262,
     343,
-    145,
-    465,
+    155,
+    642,
     847,
-    412,
-    29
+    487,
+    433,
+    38
   ],
-  "repositories": 151,
-  "privateRepositories": 61,
+  "repositories": 155,
+  "privateRepositories": 65,
   "languages": [
     [
       "TypeScript",
-      52402634
+      58341109
     ],
     [
       "Python",
-      9050755
+      9638880
     ],
     [
       "Dart",
@@ -81,27 +81,27 @@
     ],
     [
       "JavaScript",
-      5380632
+      5599626
+    ],
+    [
+      "HTML",
+      1507089
     ],
     [
       "C",
       1400699
     ],
     [
-      "HTML",
-      1387660
+      "CSS",
+      1383694
     ],
     [
-      "CSS",
-      1368274
+      "PLpgSQL",
+      1169200
     ],
     [
       "Java",
       1133367
-    ],
-    [
-      "PLpgSQL",
-      1040015
     ],
     [
       "SCSS",
@@ -128,12 +128,16 @@
       354900
     ],
     [
+      "Shell",
+      259242
+    ],
+    [
       "Perl",
       230835
     ],
     [
-      "Shell",
-      213885
+      "Dockerfile",
+      63476
     ],
     [
       "Kotlin",
@@ -142,10 +146,6 @@
     [
       "Swift",
       34643
-    ],
-    [
-      "Dockerfile",
-      33606
     ],
     [
       "Assembly",
