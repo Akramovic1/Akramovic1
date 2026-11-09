@@ -1,16 +1,15 @@
 {
   "login": "Akramovic1",
   "since": 2019,
-  "updated": "2026-11-02",
-  "contributions": 11155,
-  "commits": 8349,
+  "updated": "2026-11-09",
+  "contributions": 11691,
+  "commits": 8818,
   "activeRepos": 141,
-  "additions": 7831031,
-  "deletions": 661741,
-  "lastYear": 7439,
+  "additions": 8265378,
+  "deletions": 680953,
+  "lastYear": 7953,
   "activeDays": 322,
   "weeks": [
-    22,
     14,
     18,
     25,
@@ -61,19 +60,20 @@
     642,
     847,
     487,
-    433,
-    38
+    444,
+    267,
+    296
   ],
   "repositories": 155,
   "privateRepositories": 65,
   "languages": [
     [
       "TypeScript",
-      58341109
+      70073603
     ],
     [
       "Python",
-      9638880
+      10024026
     ],
     [
       "Dart",
@@ -81,11 +81,15 @@
     ],
     [
       "JavaScript",
-      5599626
+      5722330
+    ],
+    [
+      "PLpgSQL",
+      1860198
     ],
     [
       "HTML",
-      1507089
+      1508287
     ],
     [
       "C",
@@ -93,11 +97,7 @@
     ],
     [
       "CSS",
-      1383694
-    ],
-    [
-      "PLpgSQL",
-      1169200
+      1386910
     ],
     [
       "Java",
@@ -129,7 +129,7 @@
     ],
     [
       "Shell",
-      259242
+      285966
     ],
     [
       "Perl",
@@ -137,7 +137,7 @@
     ],
     [
       "Dockerfile",
-      63476
+      146896
     ],
     [
       "Kotlin",
